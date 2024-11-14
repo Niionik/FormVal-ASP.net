@@ -1,0 +1,19 @@
+﻿@model FormVal.Models;.Data
+@{
+    ViewData["Title"] = "Form";
+}
+
+<form asp-action="Form" method="post">
+      @using (Html.BeginForm("Form", "Data", FormMethod.Post))
+        {
+            @Html.ValidationSummary(false, "", new {@class = "text-danger"})
+            <p>Your Name: @Html.TextBoxFor(a => a.Name)</p>
+            <p>Your Email: @Html.TextBoxFor(a => a.Email)</p>
+            <p>Subject: @Html.TextBoxFor(a => a.Subject)</p>
+            <p>Your Message: @Html.TextBoxFor(a => a.Message)</p>
+            <input type="submit" />
+        }
+</form> 
+ 
+
+
